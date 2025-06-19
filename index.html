@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snake Game</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet" />
+
+  <style>
+    .head {
+      background: linear-gradient(rgb(240, 124, 124), rgb(228, 228, 129));
+      border: 2px solid rgb(34, 4, 34);
+      transform: scale(1.02);
+      border-radius: 9px;
+    }
+    .snake {
+      background-color: purple;
+      border: 0.25vmin solid white;
+      border-radius: 12px;
+    }
+    .food {
+      background: linear-gradient(red, purple);
+      border: 0.25vmin solid black;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body class="relative min-h-[100dvh] min-w-[100dvw] overflow-hidden bg-no-repeat bg-[url('./img/bg.jpg')] bg-cover bg-center flex justify-center items-center">
+
+  <!-- Score and HiScore -->
+  <div class="absolute top-4 right-20 text-[32px] font-bold font-['New_Tegomin',serif]">Score: <span id="scoreBox">0</span></div>
+  <div class="absolute top-16 right-20 text-[32px] font-bold font-['New_Tegomin',serif]">HiScore: <span id="hiscoreBox">0</span></div>
+
+  <!-- Difficulty Selection -->
+  <div id="difficultySelect" class="absolute top-4 left-10 space-y-2 bg-white p-4 rounded-xl shadow-lg text-center">
+    <p class="text-lg font-semibold">Select Difficulty:</p>
+    <button onclick="setDifficulty('easy')" class="bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded">Easy</button>
+    <button onclick="setDifficulty('medium')" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-1 rounded">Medium</button>
+    <button onclick="setDifficulty('hard')" class="bg-red-500 hover:bg-red-600 text-white px-4 py-1 rounded">Hard</button>
+  </div>
+
+  <!-- Leaderboard -->
+  <div class="absolute bottom-4 left-4 bg-white p-4 rounded-lg shadow-xl w-52">
+    <h2 class="text-lg font-bold mb-2">🏆 Leaderboard</h2>
+    <ol id="leaderboard" class="list-decimal ml-5 text-sm space-y-1"></ol>
+  </div>
+
+  <!-- Game Board -->
+  <div id="board" class="bg-[linear-gradient(rgb(170,236,170),rgb(236,236,167))] w-[min(90vmin,90vh)] h-[min(90vmin,90vh)] border-2 border-black grid [grid-template-rows:repeat(18,_1fr)] [grid-template-columns:repeat(18,_1fr)]"></div>
+
+  <script src="./index.js"></script>
+</body>
+</html>
+
