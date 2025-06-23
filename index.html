@@ -26,7 +26,7 @@
     }
   </style>
 </head>
-<body class="relative min-h-[100dvh] min-w-[100dvw] overflow-hidden bg-no-repeat bg-[url('./bg.jpg')] bg-cover bg-center flex justify-center items-center">
+<body class="relative min-h-[100dvh] min-w-[100dvw] overflow-hidden bg-no-repeat bg-[url('/bg.jpg')] bg-cover bg-center flex justify-center items-center">
 
   <!-- Score and HiScore -->
   <div class="absolute top-4 right-20 text-[32px] font-bold font-['New_Tegomin',serif]">Score: <span id="scoreBox">0</span></div>
@@ -44,6 +44,15 @@
   <div class="absolute bottom-4 left-4 bg-white p-4 rounded-lg shadow-xl w-52">
     <h2 class="text-lg font-bold mb-2">🏆 Leaderboard</h2>
     <ol id="leaderboard" class="list-decimal ml-5 text-sm space-y-1"></ol>
+  </div>
+
+  <!-- Control Buttons -->
+  <div class="absolute bottom-4 right-4 bg-white p-4 rounded-lg shadow-xl space-y-2 w-52 text-center">
+    <h2 class="text-lg font-bold mb-2">🎮 Controls</h2>
+    <button onclick="toggleMusic()" id="musicBtn" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-1 rounded">🔈 Music: ON</button>
+    <button onclick="startGame()" class="w-full bg-green-500 hover:bg-green-600 text-white py-1 rounded">▶ Start</button>
+    <button onclick="quitGame()" class="w-full bg-red-500 hover:bg-red-600 text-white py-1 rounded">⏹ Quit</button>
+    <button onclick="clearStorage()" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-1 rounded">🗑 Clear Storage</button>
   </div>
 
   <!-- Game Board -->
